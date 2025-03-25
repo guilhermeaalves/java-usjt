@@ -10,7 +10,8 @@ public class aula02 {
         // Exercicio4 ex4 = new Exercicio4();
         // Exercicio5 ex5 = new Exercicio5();
         // Exercicio6 ex6 = new Exercicio6();
-        Exercicio7 ex7 = new Exercicio7();
+        // Exercicio7 ex7 = new Exercicio7();
+        Exercicio8 ex8 = new Exercicio8();
 
         // ex.executar();
         // ex2.executar();
@@ -18,7 +19,8 @@ public class aula02 {
         // ex4.executar();
         // ex5.executar();
         // ex6.executar();
-        ex7.executar();
+        // ex7.executar();
+        ex8.executar();
     }
 }
 
@@ -127,6 +129,49 @@ class Exercicio7 {
 
 class Exercicio8 {
     public void executar() {
-        
+        String[] Opcoes = { "Celsius", "Fahrenheit", "Kelvin" };
+        String unidadeTemp = (String) showInputDialog(null,
+                "Escolha a unidade de temperatura da qual deseja converter: ", "Conversor de temperatura", 3, null,
+                Opcoes, Opcoes[0]);
+
+        String input = showInputDialog("Insira o valor da temperatura: ");
+        double valorTemp = Double.parseDouble(input);
+
+        String[] Opcoes2 = { "Celsius", "Fahrenheit", "Kelvin" };
+        String unidadeTemp2 = (String) showInputDialog(null,
+                "Escolha a unidade de temperatura para qual deseja converter: ", "Conversor de temperatura", 3, null,
+                Opcoes2, Opcoes2[0]);
+
+        switch (unidadeTemp) {
+            case "Celsius":
+                if (unidadeTemp2.equals("Fahrenheit")) {
+                    valorTemp = (valorTemp * 9 / 5) + 32;
+
+                } else if (unidadeTemp2.equals("Kelvin")) {
+                    valorTemp = valorTemp + 273.15;
+
+                }
+                break;
+            case "Fahrenheit":
+                if (unidadeTemp2.equals("Celsius")) {
+                    valorTemp = (valorTemp - 32) * 5 / 9;
+
+                } else if (unidadeTemp2.equals("Kelvin")) {
+                    valorTemp = (valorTemp - 32) * 5 / 9 + 273.15;
+
+                }
+                break;
+            case "Kelvin":
+                if (unidadeTemp2.equals("Celsius")) {
+                    valorTemp = valorTemp - 273.15;
+
+                } else if (unidadeTemp2.equals("Fahrenheit")) {
+                    valorTemp = (valorTemp * 9 / 5) + 32;
+
+                }
+                break;
+        }
+
+        showMessageDialog(null, "O valor da temperatura convertida é: " + valorTemp);
     }
 }
