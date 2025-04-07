@@ -11,7 +11,8 @@ public class aula03 {
         // exercicio5 ex5 = new exercicio5();
         // exercicio6 ex6 = new exercicio6();
         // exercicio7 ex7 = new exercicio7();
-        Exercicio8 ex8 = new Exercicio8();
+        // Exercicio8 ex8 = new Exercicio8();
+        Exercicio9 ex9 = new Exercicio9();
 
         // ex.executar();
         // ex2.executar();
@@ -20,7 +21,8 @@ public class aula03 {
         // ex5.executar();
         // ex6.executar();
         // ex7.executar();
-        ex8.executar();
+        // ex8.executar();
+        ex9.executar();
     }
 }
 
@@ -144,9 +146,7 @@ class exercicio5 {
                 + " Quarto Múltiplo: " + num * 4 + "\n"
                 + " Quinto Múltiplo: " + num * 5);
 
-        while (num > 0)
-            ;
-        {
+        while (num > 0) {
             showMessageDialog(null, "Número inválido. Tente novamente.");
         }
     }
@@ -188,11 +188,12 @@ class exercicio7 {
 }
 
 class Exercicio8 {
+
     public void executar() {
         int num = Integer.parseInt(showInputDialog("Digite um número: "));
 
         for (int num1 = num; num1 > 0; num1--) {
-            if (num1 % 2 != 0) {
+            if (num1 % 3 == 0) {
                 showMessageDialog(null, "Números ímpares: " + num1);
             }
         }
@@ -200,6 +201,18 @@ class Exercicio8 {
             if (num1 % 2 == 0) {
                 showMessageDialog(null, "Números pares: " + num1);
             }
+        }
+    }
+}
+
+class Exercicio9 {
+    public void executar() {
+        int num = Integer.parseInt(showInputDialog("Digite um número: "));
+
+        for (int num1 = 1; num > num1; num1++) {
+            int num3 = num1 * num;
+            showMessageDialog(null, "Resultado: " + num3);
+
         }
     }
 }
